@@ -2,11 +2,11 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
+ * 三数之和最接近目标值的和
 */
 
 function threeSumClosest(nums,target){
     let len = nums.length;
-   
     if(len === 3){
         return getNums(nums)
     }
@@ -33,7 +33,6 @@ function threeSumClosest(nums,target){
                 return sum
             }
         }
-        
     }
     return res
 }
