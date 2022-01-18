@@ -7,7 +7,7 @@ function multiRequest(urls = [], maxNum) {
     let count = 0;
   
     return new Promise((resolve, reject) => {
-      // 请求maxNum个
+      // 请求maxNum个, while方法用来控制刚请求五个的时候的边界问题，有五个正在请求中就暂停发送请求，等后续有请求完成之后在执行next push 操作
       while (count < maxNum) {
         next();
       }
