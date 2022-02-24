@@ -12,7 +12,7 @@ var permuteUnique = function (nums) {
       return
     }
     for (let i = 0; i < nums.length; i++) {
-      if (i > 0 && nums[i] == nums[i - 1] && used[i]) continue;   // 如果值用过了直接退出
+      if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) continue;   // 如果值用过了直接退出
       if (!used[i]) {                                             //用过没有用过就push进去
         path.push(nums[i])
         used[i] = true;
@@ -28,4 +28,4 @@ var permuteUnique = function (nums) {
   return ans;
 };
 
-console.log(permuteUnique([1, 2, 3]))
+console.log(permuteUnique([1, 1, 2]))
